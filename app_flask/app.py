@@ -5,9 +5,10 @@ import tensorflow as tf
 app = Flask(__name__)
 
 def prediction(params):
-    model = tf.keras.models.load_model('model_nero')
+    model = tf.keras.models.load_model('models/mn_model_nn')
     pred = model.predict([params])
     return pred
+
 
 @app.route('/', methods=['POST', 'GET'])
 def predict():
